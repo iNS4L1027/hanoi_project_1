@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>하노이의 탑</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+<div class="container">
+    <h1>하노이의 탑</h1>
+    <p class="subtitle">자료구조 과제</p>
+    <p class="subtitle">fastapi·uvicorn·jinja2</p>
+
+    <div class="controls">
+        <label for="diskCount">원판 개수</label>
+        <input id="diskCount" type="number" min="1" max="15" value="3">
+
+        <button id="startButton" type="button">실행</button>
+        <button id="pauseButton" class="secondary" type="button" disabled>
+            일시정지
+        </button>
+        <button id="resetButton" class="secondary" type="button">
+            초기화
+        </button>
+    </div>
+
+    <div class="settings">
+    <label for="speed">이동 간격</label>
+    <input id="speed" type="range" min="0" max="2" step="0.05" value="0.25">
+    <span id="speedLabel">0.25초</span>
+    </div>
+
+    <div class="board">
+        <div class="tower-wrap">
+            <div class="tower" id="towerA"></div>
+            <div class="tower-label">A 기둥</div>
+        </div>
+
+        <div class="tower-wrap">
+            <div class="tower" id="towerB"></div>
+            <div class="tower-label">B 기둥</div>
+        </div>
+
+        <div class="tower-wrap">
+            <div class="tower" id="towerC"></div>
+            <div class="tower-label">C 기둥</div>
+        </div>
+    </div>
+
+    <div class="info" id="status">
+        원판 개수를 선택하고 실행하세요.
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+</div>
+
+<section class="project-info">
+    <h2>프로젝트 소개</h2>
+    <p>
+        FastAPI와 JavaScript를 활용하여
+        하노이의 탑 알고리즘을 시각적으로 표현함
+        원판의 이동 과정을 애니메이션으로 확인하며 재귀 함수의 동작 원리를
+        눈으로 쉽게 이해 가능함
+    </p>
+
+    <h2>사용 기술</h2>
+    <div class="tech-list">
+        <div class="tech-item">
+            <h3>Python · FastAPI</h3>
+            <p>웹 서버를 구성 및 웹페이지 생성</p>
+        </div>
+        <div class="tech-item">
+            <h3>HTML</h3>
+            <p>입력창 / 버튼 / 기둥 등 화면의 구조를 구성</p>
+        </div>
+        <div class="tech-item">
+            <h3>CSS</h3>
+            <p>배경 / 원판 / 기둥의 디자인과 화면 배치를 담당</p>
+        </div>
+        <div class="tech-item">
+            <h3>JavaScript</h3>
+            <p>이동 순서 계산 / 애니메이션 / 속도 조절 기능을 처리</p>
+        </div>
+    </div>
+
+    <h2>알고리즘 설명</h2>
+    <div class="formula">
+        최소 이동 횟수 = 2<sup>n</sup> - 1
+    </div>
+
+    <h2>주요 기능</h2>
+    <ul>
+        <li>원판 개수 설정 및 자동 크기 조절</li>
+        <li>원판 이동 애니메이션과 속도 조절</li>
+        <li>일시정지 및 재개</li>
+        <li>초기화 및 진행 과정 표시</li>
+    </ul>
+</section>
+
+</body>
+</html>
